@@ -1,0 +1,76 @@
+# Reusable Prompt — Generate Rust Book Notes in My Style
+
+Copy-paste the block below into any new chat, replace the URL/chapter, and attach the source (or paste a link the AI can fetch).
+
+---
+
+## THE PROMPT
+
+> I want you to generate a study note for the following Rust Book chapter in **my personal note style**. Read the source first, then produce the note.
+>
+> **Source:** <paste chapter URL, e.g. https://doc.rust-lang.org/book/ch03-00-common-programming-concepts.html>
+>
+> **Output format:** A single Markdown (`.md`) file I can read directly and later convert to `.docx` if I want.
+>
+> **Style rules — follow all of them:**
+>
+> 1. **Title line:** `# Rust Chapter N — <Chapter Title>`.
+> 2. **Two intro blockquotes right after the title:** one `> **Goal:**` (what you'll build/learn in plain words) and one `> **New Rust concepts you will meet:**` (comma-separated list of keywords).
+> 3. **Numbered top-level sections** using `## 1.`, `## 2.`, `## 3.` etc. Each section covers ONE small idea. Prefer many small sections over a few big ones.
+> 4. **Use subsections** `### N.1`, `### N.2` when a single idea has multiple parts.
+> 5. **Tables for anything that maps A → B.** Command → what it does, keyword → meaning, variant → outcome, section → purpose. Use two-column tables with a short header. Do not write these as prose paragraphs.
+> 6. **Code blocks** must use language tags: ` ```rust `, ` ```toml `, ` ```bash ` — never bare backticks.
+> 7. **Use ✅ and ❌** for do/don't or true/false lists — sparingly, only where it genuinely reads better than plain bullets.
+> 8. **"Think of it as:" blockquote** to translate a concept into everyday language. Use this whenever an idea is abstract (references, ownership, traits, lifetimes, macros, iterators, etc.). Format: `Think of it as:` on its own line, then a `> "..."` blockquote below.
+> 9. **ASCII flow diagrams with `↓` arrows** whenever there is a pipeline or sequence of steps. Example:
+>    ```
+>    Write Code
+>         ↓
+>    cargo check
+>         ↓
+>    cargo run
+>    ```
+> 10. **Line-by-line code walkthroughs**: after showing a code block, break down each interesting line or symbol in a table with columns `Piece | Meaning`.
+> 11. **"Example:" lines** followed by short code, whenever you introduce a new keyword or syntax. Keep examples tiny (1–3 lines).
+> 12. **Tone:** simple, plain English, short sentences. Explain like the reader is a beginner but not stupid. Never lecture. Never use big words when small ones will do. No fluff, no marketing tone.
+> 13. **Second-to-last section MUST be `## Quick Revision`** — a fast reference of every key command or code pattern from the chapter, grouped by tiny headings, each with a 1–3 line code block. No explanations here, just the code.
+> 14. **Last section MUST be `## Mental Model`** — one or two ASCII flow diagrams that summarize (a) the runtime/data flow of what was built, and (b) the "big picture" of new concepts introduced, listed like:
+>     ```
+>     concept       →  one-line meaning
+>     concept       →  one-line meaning
+>     ```
+> 15. **Closing line in italics**, one sentence, summarizing what the reader has now learned. Format: `*Chapter N done. You have ...*`
+> 16. **Do NOT invent content.** If the source chapter does not cover something, do not add it. Follow the source's order of ideas, but you may split one long section into smaller numbered ones for clarity.
+> 17. **Do NOT copy the source's prose verbatim.** Rewrite in the note style above. Short sentences. Tables and code blocks over paragraphs whenever possible.
+> 18. **Length target:** thorough but not padded. Every section earns its place. If a chapter has 10 ideas, produce ~10–16 numbered sections plus the Quick Revision and Mental Model.
+>
+> **What to do before writing:**
+> - Fetch and read the full source page.
+> - Make a mental list of the new concepts introduced.
+> - Group related concepts into numbered sections.
+> - Then write the note top to bottom.
+>
+> **Deliverable:** save the file at `/mnt/user-data/outputs/Rust_Chapter_<N>_Guide.md` and share it with `present_files`.
+
+---
+
+## Optional add-ons you can append to the prompt
+
+- **Want a Word doc too?** Add: *"Also produce a `.docx` version using the docx skill, with H1 for the numbered top-level sections and H2/H3 for subsections."*
+- **Studying for revision only?** Add: *"Skip section 5 (line-by-line walkthroughs) and expand section Quick Revision instead."*
+- **Want quiz questions?** Add: *"After the Mental Model, add a `## Practice Questions` section with 5 short questions and hidden answers."*
+
+---
+
+## Why this prompt works
+
+It locks in the six things that make your notes recognizable:
+
+1. Numbered sections, one idea each
+2. Two-column tables everywhere possible
+3. ASCII `↓` flow diagrams
+4. "Think of it as:" analogies
+5. ✅ ❌ callouts
+6. `Quick Revision` + `Mental Model` at the end
+
+Anything you feed this prompt will come out looking like the git guide and Chapter 1/2 notes.
