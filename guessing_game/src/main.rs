@@ -1,39 +1,31 @@
-use std::cmp::Ordering;
 use std::io;
-use rand::RngExt;  // got changed from rand::Rng to rand::RngExt
+use std::cmp::Ordering;
+use rand::Rng;
+
 
 fn main(){
+    println!("Guess the Number");
 
-println!("Welcome to the Guessing Game!");
+    let secret_number = rand::thread_rng().gen_range(1..=100);
 
-let secret_number = rand::rng().random_range(1..=100);  // got changed from rand::thread_rng().gen_range(1..=100) 
-                                                        // to rand::rng().random_range(1..=100)
 
-loop{
-println!("Please enter your guess (between 1 and 100):");
+  loop{
+    let mut guess = String::new();
 
-let mut guess = String::new();
+    io::stdin().read_line(&mut guess).expect("Failed to read line!");
 
-io::stdin()
-    .read_line(&mut guess)
-    .expect("Failed to read line");
+    let guess : u32 = guess.trim().parse().expect("Failed to take input!");
+   
+    println!("You guessed, {}", guess);
+    println!("You secret_number is, {}", secret_number);
 
-let guess: u32 = match guess.trim().parse() {
-    Ok(num) => num,
-    Err(_) => continue,
-};
-
-println!("You guessed: {}", guess);
-
- match guess.cmp(&secret_number){
-    Ordering::Less => println!("Too small!"),
-    Ordering::Greater => println!("Too big!"),
+   match guess.cmp(&secret_number){
+    Ordering::Less => println!("Too small"),
     Ordering::Equal => {
-        println!("You win!");
+        println!("You win");
         break;
     }
- }
-
+    Ordering::Greater => println!("Too big"),
+   }
+  }
 }
-}
-
