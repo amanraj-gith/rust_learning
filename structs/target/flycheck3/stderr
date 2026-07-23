@@ -1,0 +1,64 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   0.119259100s  INFO prepare_target{force=false package_id=structs v0.1.0 (C:\Users\Seccom\Desktop\rust_learning\structs) target="structs"}: cargo::core::compiler::fingerprint: fingerprint error for structs v0.1.0 (C:\Users\Seccom\Desktop\rust_learning\structs)/Check { test: false }/TargetInner { name: "structs", doc: true, ..: with_path("C:\\Users\\Seccom\\Desktop\\rust_learning\\structs\\src\\main.rs", Edition2024) }
+   0.119354700s  INFO prepare_target{force=false package_id=structs v0.1.0 (C:\Users\Seccom\Desktop\rust_learning\structs) target="structs"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Seccom\Desktop\rust_learning\structs\target\debug\.fingerprint\structs-225ff7f3809c7bd4\bin-structs`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.151282800s  INFO prepare_target{force=false package_id=structs v0.1.0 (C:\Users\Seccom\Desktop\rust_learning\structs) target="structs"}: cargo::core::compiler::fingerprint: fingerprint error for structs v0.1.0 (C:\Users\Seccom\Desktop\rust_learning\structs)/Check { test: true }/TargetInner { name: "structs", doc: true, ..: with_path("C:\\Users\\Seccom\\Desktop\\rust_learning\\structs\\src\\main.rs", Edition2024) }
+   0.151359200s  INFO prepare_target{force=false package_id=structs v0.1.0 (C:\Users\Seccom\Desktop\rust_learning\structs) target="structs"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Seccom\Desktop\rust_learning\structs\target\debug\.fingerprint\structs-8127bb7489ab6d72\test-bin-structs`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+    Checking structs v0.1.0 (C:\Users\Seccom\Desktop\rust_learning\structs)
+error: could not compile `structs` (bin "structs" test) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `structs` (bin "structs") due to 1 previous error
